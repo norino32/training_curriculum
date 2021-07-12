@@ -8,6 +8,7 @@ class CalendarsController < ApplicationController
 
   # 予定の保存
   def create
+    binding.pry
     Plan.create(plan_params)
     redirect_to action: :index
   end
@@ -19,7 +20,9 @@ class CalendarsController < ApplicationController
   end
 
   def get_W
+
     week_days = ['(日)','(月)','(火)','(水)','(木)','(金)','(土)']
+
 
     # Dateオブジェクトは、日付を保持しています。下記のように`.today.day`とすると、今日の日付を取得できます。
     @todays_date = Date.today
